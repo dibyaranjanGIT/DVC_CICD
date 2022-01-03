@@ -20,7 +20,7 @@ dvc init
 dvc repro
 ```
 
-#### To see the dependency in file
+### To see the dependency in file
 ```buildoutcfg
 dvc dag
 ```
