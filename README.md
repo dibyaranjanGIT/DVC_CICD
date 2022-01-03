@@ -53,3 +53,14 @@ setup(
     ]
 )
 ```
+
+### Create a config file
+```yaml
+data_source: https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv
+
+artifacts:
+  artifcats_dir: artifacts
+  raw_local_dir: local_dir
+  raw_local_file: data.csv
+
+```
