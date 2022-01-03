@@ -24,3 +24,8 @@ dvc repro
 ```buildoutcfg
 dvc dag
 ```
+
+### To install the requirements
+```buildoutcfg
+pip install -r requirements.txt
+```
