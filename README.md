@@ -64,3 +64,17 @@ artifacts:
   raw_local_file: data.csv
 
 ```
+
+### Create a dvc.yaml file
+```yaml
+stages:
+  load_data:
+    cmd: python stage1_load_save.py --config=configuration/config.yaml
+    deps:
+      - stage1_load_save.py
+      - src/utils/all_utils.py
+      - configuration/config.yaml
+    outs:
+      - artifacts/local_dir/data.csv
+
+```
