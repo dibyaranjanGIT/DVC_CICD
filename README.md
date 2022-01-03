@@ -1,4 +1,4 @@
-## Commands Used
+# Commands Used
 
 ```buildoutcfg
 conda create -n env_name python=3.7
@@ -20,7 +20,7 @@ dvc init
 dvc repro
 ```
 
-#### TO see the dependency in file
+#### To see the dependency in file
 ```buildoutcfg
 dvc dag
 ```
