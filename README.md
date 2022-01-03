@@ -19,3 +19,8 @@ dvc init
 ```buildoutcfg
 dvc repro
 ```
+
+#### TO see the dependency in file
+```buildoutcfg
+dvc dag
+```
