@@ -50,3 +50,5 @@ stages:
     - path: artifacts/local_dir/data.csv
       md5: 5c33bd2c9a20152b080d3ae7ee0542b6
       size: 93599
+  always_run:
+    cmd: python stage1_load_save.py --config=configuration/config.yaml
