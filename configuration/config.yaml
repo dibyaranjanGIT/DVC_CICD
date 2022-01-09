@@ -9,3 +9,5 @@ artifacts:
   train: train.csv
   test: test.csv
 
+  model_save_path: models
+

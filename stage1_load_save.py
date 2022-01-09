@@ -7,8 +7,6 @@ def get_data(config_path):
     config = read_config(config_path)
     remote_data_path = config["data_source"]
     df = pd.read_csv(remote_data_path, sep=";")
-    # print(config)
-    # print(df.head())
 
     # Save data set in local
     artifcats_dir = config["artifacts"]["artifcats_dir"]
@@ -19,7 +17,6 @@ def get_data(config_path):
     create_directory(dirs=[raw_local_dir_path])
 
     raw_local_file_path = os.path.join(raw_local_dir_path, raw_local_file)
-    print(raw_local_file_path)
     df.to_csv(raw_local_file_path, sep=";", index=False)
 
 if __name__ == '__main__':

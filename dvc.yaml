@@ -7,6 +7,7 @@ stages:
       - configuration/config.yaml
     outs:
       - artifacts/local_dir/data.csv
+
   split_data:
     cmd: python stage2_split_data.py --config=configuration/config.yaml --params=params.yaml
     deps:
@@ -14,9 +15,27 @@ stages:
       - src/utils/all_utils.py
       - configuration/config.yaml
       - params.yaml
+      - artifacts/local_dir/data.csv
+    params:
+      - base.random_state
+      - base.test_size
     outs:
       - artifacts/split_data_dir/train.csv
       - artifacts/split_data_dir/test.csv
 
-  always_run:
-    cmd: python stage1_load_save.py --config=configuration/config.yaml
+  train_model:
+    cmd: python stage3_train.py --config=configuration/config.yaml --params=params.yaml
+    deps:
+      - stage2_split_data.py
+      - stage3_train.py
+      - src/utils/all_utils.py
+      - configuration/config.yaml
+      - params.yaml
+      - artifacts/split_data_dir/train.csv
+    params:
+      - base.test_size
+      - models.ElasticNet.l1_ratio
+      - models.ElasticNet.alpha
+    outs:
+      - models/Elastic_Model.sav
+

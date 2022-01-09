@@ -33,8 +33,6 @@ def split_save(config_path, params_path):
 
     train_data_path1 = os.path.join(artifcats_dir, split_data_dir)
     train_data_path2 = os.path.join(train_data_path1, split_data_train)
-    print(train_data_path2)
-    print(train.head())
     train.to_csv(train_data_path2, sep=";", index=False)
 
     test_data_path1 = os.path.join(artifcats_dir, split_data_dir)
