@@ -39,3 +39,15 @@ stages:
     outs:
       - models/Elastic_Model.sav
 
+  evaluate_model:
+    cmd: python stage4_evaluate.py --config=configuration/config.yaml --params=params.yaml
+    deps:
+      - stage3_train.py
+      - stage4_evaluate.py
+      - src/utils/all_utils.py
+      - configuration/config.yaml
+      - params.yaml
+      - models/Elastic_Model.sav
+    outs:
+      - reports/scores.json
+

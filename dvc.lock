@@ -4,11 +4,11 @@ stages:
     cmd: python stage1_load_save.py --config=configuration/config.yaml
     deps:
     - path: configuration/config.yaml
-      md5: 1069df891364b0abe30d074cd31e68ea
-      size: 308
+      md5: 4dbcee23cba164b6e93ad8473028c3bc
+      size: 392
     - path: src/utils/all_utils.py
-      md5: 652c9dc591e61a98ba70c0de662de1e6
-      size: 466
+      md5: 38839f7186eaa746920fd9f60dd24ec3
+      size: 611
     - path: stage1_load_save.py
       md5: 0a0f2d14ead3c9cd909e534b511aadba
       size: 968
@@ -23,14 +23,14 @@ stages:
       md5: 5c33bd2c9a20152b080d3ae7ee0542b6
       size: 93599
     - path: configuration/config.yaml
-      md5: 1069df891364b0abe30d074cd31e68ea
-      size: 308
+      md5: 4dbcee23cba164b6e93ad8473028c3bc
+      size: 392
     - path: params.yaml
       md5: 1ff46662dec284504afab2f691f32a0f
       size: 103
     - path: src/utils/all_utils.py
-      md5: 652c9dc591e61a98ba70c0de662de1e6
-      size: 466
+      md5: 38839f7186eaa746920fd9f60dd24ec3
+      size: 611
     - path: stage2_split_data.py
       md5: 066a3ce8588afa19f97cf3369d566eff
       size: 1954
@@ -52,14 +52,14 @@ stages:
       md5: 4403f5d230b67504ca873a4ba22b7dd4
       size: 65606
     - path: configuration/config.yaml
-      md5: 1069df891364b0abe30d074cd31e68ea
-      size: 308
+      md5: 4dbcee23cba164b6e93ad8473028c3bc
+      size: 392
     - path: params.yaml
       md5: 1ff46662dec284504afab2f691f32a0f
       size: 103
     - path: src/utils/all_utils.py
-      md5: 652c9dc591e61a98ba70c0de662de1e6
-      size: 466
+      md5: 38839f7186eaa746920fd9f60dd24ec3
+      size: 611
     - path: stage2_split_data.py
       md5: 066a3ce8588afa19f97cf3369d566eff
       size: 1954
@@ -75,3 +75,28 @@ stages:
     - path: models/Elastic_Model.sav
       md5: 2c79e47bce30744572b4452153e09648
       size: 1316
+  evaluate_model:
+    cmd: python stage4_evaluate.py --config=configuration/config.yaml --params=params.yaml
+    deps:
+    - path: configuration/config.yaml
+      md5: 4dbcee23cba164b6e93ad8473028c3bc
+      size: 392
+    - path: models/Elastic_Model.sav
+      md5: 2c79e47bce30744572b4452153e09648
+      size: 1316
+    - path: params.yaml
+      md5: 1ff46662dec284504afab2f691f32a0f
+      size: 103
+    - path: src/utils/all_utils.py
+      md5: 38839f7186eaa746920fd9f60dd24ec3
+      size: 611
+    - path: stage3_train.py
+      md5: 5d50ddd27b89d7c9ca9f43d69493fa9b
+      size: 1602
+    - path: stage4_evaluate.py
+      md5: 50353bdcaaaf2005cd0566c9ab16c521
+      size: 2036
+    outs:
+    - path: reports/scores.json
+      md5: e9c6dff5b9230ee9bd651d088778123f
+      size: 148

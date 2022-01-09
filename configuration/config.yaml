@@ -10,4 +10,8 @@ artifacts:
   test: test.csv
 
   model_save_path: models
+  model_name: Elastic_Model.sav
+
+  reports_dir : reports
+  scores : scores.json
 
